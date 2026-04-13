@@ -17,9 +17,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use("/", (req, res) => {
-  res.send(`Connected!`)
+  res.send(`Connected`)
 })
 
 app.listen(PORT, () => {
-  console.log(`Running Express server on Port ${PORT} . . .`)
+  console.log(`Running Express server on Port ${PORT} . . . !!`)
 })
