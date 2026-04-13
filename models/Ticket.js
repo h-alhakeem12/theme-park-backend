@@ -6,7 +6,7 @@ const ticketSchema = new mongoose.Schema(
     customerName: { type: String, required: true },
     customerEmail: { type: String, required: true },
     quantity: { type: Number, required: true },
-    price: { type: Number, required: true },
+    totalprice: { type: Number, required: true },
   },
   { timestamps: true }
 )

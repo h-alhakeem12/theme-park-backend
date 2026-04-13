@@ -25,5 +25,5 @@ const deleteTickets = async (req, res) => {
 
 module.exports = {
   addTickets,
-  deleteTickets
+  deleteTickets,
 }
