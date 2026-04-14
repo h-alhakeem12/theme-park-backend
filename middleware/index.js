@@ -4,5 +4,6 @@ const validateTicket = (req, res, next) => {
   if (!customerName || !customerEmail || !totalprice || !park || !quantity) {
     res.status(400).send({ error: "Missing information." })
   }
+  next()
 }
 module.exports = { validateTicket }
