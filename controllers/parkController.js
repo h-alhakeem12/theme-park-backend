@@ -1,7 +1,7 @@
 const Park = require("../models/Park")
 const getParks = async (req, res) => {
   try {
-    const parks = await Park.find()
+    const parks = await Park.find({})
     res.send(parks)
   } catch (error) {
     res.status(500).send({ msg: "Error getting park", error })
