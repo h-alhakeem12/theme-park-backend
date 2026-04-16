@@ -1,11 +1,17 @@
 const Ticket = require("../models/Ticket")
 
+const Park = require("../models/Park")
+
 const addTickets = async (req, res) => {
   try {
-    const newTicket = await Ticket.create(req.body)
+    const park = await Park.findById(req.body.parkId)
+    const totalPrice = park.price * req.body.quantity
+    const newTicket = await Ticket.create({
+      ...req.body,
+      totalPrice,
+    })
     res.status(201).json(newTicket)
   } catch (error) {
-    console.error("⚠️ error !", error.message)
     res.status(500).json({ message: error.message })
   }
 }
@@ -18,7 +24,6 @@ const deleteTickets = async (req, res) => {
     }
     res.json({ message: "Deleted successfully" })
   } catch (error) {
-    console.error("⚠️ error !", error.message)
     res.status(500).json({ message: error.message })
   }
 }

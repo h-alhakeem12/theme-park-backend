@@ -1,4 +1,5 @@
 const Park = require("../models/Park")
+
 const getParks = async (req, res) => {
   try {
     const parks = await Park.find({})
